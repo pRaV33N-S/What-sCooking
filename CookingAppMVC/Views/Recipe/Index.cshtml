@@ -1,0 +1,61 @@
+﻿@model List<Recipe>
+
+<link rel="stylesheet" href="~/css/recipe-index-styles.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/js/recipe-index-scripts.js"></script>
+
+<div class="search-container">
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search by Dish Name">
+        <button id="searchButton">Search</button>
+    </div>
+</div>
+<div class="filter-container">
+    <a asp-action="Create" class="create-new-button">Create New</a>
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="sortButton" data-bs-toggle="dropdown" aria-expanded="false">
+            Sort By : Featured
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="sortButton">
+            <li><button class="dropdown-item" type="button" data-value="nameAsc">Sort By : A to Z</button></li>
+            <li><button class="dropdown-item" type="button" data-value="nameDesc">Sort By : Z to A</button></li>
+        </ul>
+    </div>
+
+</div>
+<div class="content">
+    <div class="sidebar">
+        <h2 style="text-align:center">Category</h2>
+        <ul class="category-button-list">
+            <li><button class="category-button" data-category="Appetizer">Appetizer</button></li>
+            <li><button class="category-button" data-category="Beef">Beef</button></li>
+            <li><button class="category-button" data-category="breakfast">Breakfast</button></li>
+            <li><button class="category-button" data-category="Chicken">Chicken</button></li>
+            <li><button class="category-button" data-category="Drink">Drink</button></li>
+            <li><button class="category-button" data-category="Dessert">Dessert</button></li>
+            <li><button class="category-button" data-category="Lamb">Lamb</button></li>
+            <li><button class="category-button" data-category="Mutton">Mutton</button></li>
+            <li><button class="category-button show-all">Show All</button></li>
+        </ul>
+    </div>
+
+
+
+    <div class="main-content">
+        <div class="recipe-grid">
+            @foreach (var recipe in Model)
+            {
+                <div class="recipe-card-container" data-category="@recipe.Category">
+                    <a asp-action="Details" asp-route-id="@recipe.Id" class="recipe-card">
+                        <img src="@recipe.ImageUrl" alt="@recipe.Name" class="recipe-image">
+                        <h3 class="recipe-name">@recipe.Name</h3>
+                        <p class="recipe-category">@recipe.Category</p>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<style>
+
+</style>

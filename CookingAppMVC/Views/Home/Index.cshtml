@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    body {
+        min-height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        justify-content: space-around;
+        background-image: url("https://cdn.pixabay.com/photo/2017/06/01/18/46/cook-2364221_1280.jpg");
+    }
+
+    .mg {
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        margin: 20px;
+        color: white;
+        font-family: 'Arial', sans-serif; /* Change the font-family to your desired font */
+    }
+
+        .mg h1 {
+            font-size: 36px; /* Adjust the font size for the heading */
+            margin: 10px 0;
+            font-weight: bold; /* Make the heading bold */
+        }
+
+        .mg p {
+            font-size: 18px;
+            margin: 10px 0;
+            font-family: 'Verdana', sans-serif; /* Change the font-family for paragraphs */
+        }
+</style>
+
+<div class="mg">
+    <h1>Hi @User.Identity.Name! What's Cooking?</h1>
+    <p>Thank you for joining us!</p>
+    <p>Explore our recipes and endorse the ones you find the tastiest!</p>
+    <p>All your followers would love to lead a healthy and hence happy life!!</p>
+    <p>Go ahead and help them lead a healthier life with your endorsements</p>
+</div>

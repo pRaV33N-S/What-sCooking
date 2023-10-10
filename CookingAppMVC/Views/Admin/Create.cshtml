@@ -1,0 +1,97 @@
+﻿@model Admin
+
+@{
+    ViewData["Title"] = "Create Admin";
+}
+
+<style>
+    body {
+        background-image: url("https://png.pngtree.com/background/20210710/original/pngtree-black-meat-western-food-banner-background-picture-image_1013905.jpg");
+        backdrop-filter: blur(3px);
+    }
+
+    .wrapper {
+        margin-left: 400px;
+        margin-top: 110px;
+        margin-bottom: 80px;
+        margin-right: 80px;
+    }
+
+    label {
+        color: white;
+    }
+
+    .text-info {
+        color: white;
+        font-weight: bold;
+    }
+
+    .form-control {
+        background-color: #D3D3D3;
+        width: 60%;
+        border-color: white;
+    }
+
+    .button {
+        margin-top: 20px;
+    }
+
+    .btn-primary {
+        background-color: #66FF66;
+        border-color: black;
+        color: #000000;
+        font-size: 17px;
+        box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-margin {
+        margin-right: 188px;
+    }
+
+    .btn-sec {
+        background-color: #6495ED; /* Blue shade for the "Back to List" button */
+        border-color: black;
+        color: #000000;
+    }
+
+    .heading1 {
+        text-align: center;
+        margin-right: 250px;
+        color: white;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="row">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="text-center">
+                    <h2 class="heading1">Create Admin</h2>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label asp-for="Adminname">Admin Name:</label>
+                    <input type="text" asp-for="Adminname" class="form-control" placeholder="Enter Admin Name" autocomplete="off" />
+                    <span asp-validation-for="Adminname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Email:</label>
+                    <input type="text" asp-for="Email" class="form-control" placeholder="Enter Email" autocomplete="off" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password">Password:</label>
+                    <input type="password" asp-for="Password" class="form-control" placeholder="Enter password" autocomplete="off" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <hr />
+                <div class="form-group button">
+                    <button type="submit" class="btn btn-primary btn-margin">Create</button>
+                    <a asp-action="Index" class="btn btn-primary btn-sec" id="secondary">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

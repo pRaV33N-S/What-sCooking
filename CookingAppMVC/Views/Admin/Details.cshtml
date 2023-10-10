@@ -1,0 +1,104 @@
+﻿@model CookingAppMVC.Models.Admin
+
+<div class="container1">
+    <div class="card mb-5 btn-img">
+        <div class="row no-gutters">
+            <div class="col-md-4 img1">
+                <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="card-img" alt="Profile Image">
+            </div>
+            <div class="col-md-8 container2">
+                <div class="card-body">
+                    <h2 class="title">Admin Details</h2><hr />
+                    <table class="table">
+                        <tr>
+                            <th>Admin ID</th>
+                            <td>@Model.AdminId</td>
+                        </tr>
+                        <tr>
+                            <th>Admin Name</th>
+                            <td>@Model.Adminname</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>@Model.Email</td>
+                        </tr>
+                        <tr>
+                            <th>Password</th>
+                            <td>@Model.Password</td>
+                        </tr>
+                    </table>
+                    <p>
+                        <a asp-action="Index" class="btn btn-primary">Back to List</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Container for the user details card */
+    .container1 {
+        margin-top: 90px;
+        margin-left: 120px;
+        margin-right: 120px;
+    }
+
+    /* Styling for the card and its contents */
+    .card {
+        background-color: #fff; /* Background color for the card */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Styling for the profile image */
+    .img1 img {
+        max-width: 100%; /* Ensure the image fits within its container */
+    }
+
+    /* Styling for the card body */
+    .card-body {
+        padding: 20px;
+    }
+
+    /* Styling for the card title */
+    .title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    /* Styling for the table within the card */
+    .table {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    /* Styling for table headings */
+    th {
+        text-align: left;
+        width: 30%; /* Adjust the width as needed */
+    }
+
+    /* Styling for table data cells */
+    td {
+        font-weight: bold;
+    }
+
+    /* Styling for buttons */
+    .btn-primary {
+        background-color: #007bff; /* Primary button color */
+        border-color: #007bff;
+        color: white;
+    }
+
+    /* Background color for the body */
+    body {
+        background-image: url("https://img.freepik.com/free-photo/noodles-with-vegetables-with-copy-space_23-2148551717.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+    }
+</style>

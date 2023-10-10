@@ -1,0 +1,105 @@
+﻿@model CookingAppMVC.Models.Feedback
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="user-delete">
+    <div id="deleteCon">
+        <h2 class="heading1">Feedback Delete</h2>
+        <p>Are you sure you want to delete this feedback?</p>
+        <dl class="dl-horizontal">
+            <dt>Feedback ID:</dt>
+            <dd>@Model.FeedbackID</dd>
+            <dt>User Name:</dt>
+            <dd>@Model.UserName</dd>
+            <dt>Dish Name:</dt>
+            <dd>@Model.DishName</dd>
+            <dt>Category:</dt>
+            <dd>@Model.Category</dd>
+            <dt>Comment:</dt>
+            <dd>@Model.Comment</dd>
+            <dt>Rating:</dt>
+            <dd>@Model.Rating</dd>
+        </dl>
+        <hr />
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="FeedbackID" />
+            <button type="submit" class="btn btn-danger">Delete</button> |
+            <a asp-action="Index" class="btn btn-warning">Back</a>
+        </form>
+    </div>
+</div>
+
+<style>
+    /* Feedback Delete Page Styles */
+    /* Use the same styles as the User Delete page */
+    .user-delete {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    #deleteCon {
+        background-color: white;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
+    }
+
+    .heading1 {
+        text-align: center;
+    }
+
+    h2 {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    dl {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    dt {
+        text-align: left;
+        width: 30%;
+    }
+
+    dd {
+        font-weight: bold;
+    }
+
+    .button-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+        color: white;
+        font-weight: bold;
+        width:120px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: white;
+        font-weight: bold;
+        width: 160px;
+    }
+
+    body {
+        background-color: rgba(135, 206, 250, 0.5);
+        margin: 0;
+    }
+</style>

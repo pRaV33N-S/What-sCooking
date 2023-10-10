@@ -1,0 +1,157 @@
+﻿
+
+@model CookingAppMVC.Models.User
+
+@{
+    ViewData["Title"] = "EditUser";
+}
+
+<h1 class="text-center">Edit User</h1>
+
+<h4>User</h4>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditById" class="edit-user-form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary float-right" />
+                <a asp-action="Index" class="btn btn-warning btn-lg float-left">Back</a>
+          
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    /* CSS for the Edit User Form */
+    .edit-user-form {
+        width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .edit-user-form h1 {
+            text-align: center;
+            font-size: 24px;
+        }
+
+    /* Style form elements with validation errors */
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+        /* Override styles for form elements with validation errors */
+        .form-control.is-invalid {
+            border-color: #dc3545; /* Red border for invalid input */
+        }
+
+        .form-control.is-valid {
+            border-color: #28a745; /* Green border for valid input */
+        }
+
+    /* Style the validation error messages */
+    .text-danger {
+        color: #dc3545; /* Red color for error messages */
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #fff;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 4px;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+    /* Style the Back button */
+    .btn-secondary {
+        background-color: #ccc;
+        border-color: #ccc;
+        color: #fff;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 4px;
+    }
+
+        .btn-secondary:hover {
+            background-color: #999;
+            border-color: #999;
+        }
+
+    /* Back to List link */
+    .back-link {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .back-link a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+            .back-link a:hover {
+                text-decoration: underline;
+            }
+
+    body {
+        background-image: url("https://img.freepik.com/free-photo/noodles-with-vegetables-with-copy-space_23-2148551717.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+    }
+</style>

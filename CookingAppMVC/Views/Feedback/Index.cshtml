@@ -1,0 +1,110 @@
+﻿@model IEnumerable<CookingAppMVC.Models.Feedback>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    body {
+        background-image: url('https://img.freepik.com/free-photo/vegetables-set-left-black-slate_1220-685.jpg?w=826&t=st=1696412182~exp=1696412782~hmac=7d498f672ef83374be5e79ef347bfe1691d243ae1c2ee901840bb6984ad67bdf');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .container1 {
+        margin-top: 90px;
+        margin-left: 120px;
+        margin-right: 120px;
+        background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background to your content for readability */
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333; /* Text color for your content */
+    }
+
+    table.table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff; /* Background color for the table */
+    }
+
+        table.table th {
+            background-color: grey; /* Header background color */
+            color: #fff; /* Header text color */
+            padding: 10px;
+            text-align: left;
+        }
+
+        table.table td {
+            padding: 8px;
+            border-bottom: 1px solid #ccc;
+        }
+
+    .btn-details {
+        text-decoration: none;
+        margin-right: 10px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: #007bff;
+        border: 1px solid #007bff;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-delete {
+        background-color: #e74c3c; /* Lighter red color */
+        color: #fff;
+    }
+
+    table.table tbody tr:nth-child(odd) {
+        background-color: #f2f2f2; /* Odd rows background color */
+    }
+
+    table.table tbody tr:nth-child(even) {
+        background-color: #fff; /* Even rows background color */
+    }
+</style>
+
+<div class="container1">
+    <h2>Feedback List</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.FeedbackID)</th>
+                <th>@Html.DisplayNameFor(model => model.UserName)</th>
+                <th>@Html.DisplayNameFor(model => model.DishName)</th>
+                <th>@Html.DisplayNameFor(model => model.Category)</th>
+                <th>@Html.DisplayNameFor(model => model.Comment)</th>
+                <th>@Html.DisplayNameFor(model => model.Rating)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.FeedbackID)</td>
+                    <td>@Html.DisplayFor(modelItem => item.UserName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DishName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Category)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Comment)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Rating)</td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.FeedbackID }, new { @class = "btn btn-details" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.FeedbackID }, new { @class = "btn btn-delete" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

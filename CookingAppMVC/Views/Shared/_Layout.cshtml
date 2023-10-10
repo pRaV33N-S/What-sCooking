@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CookingAppMVC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CookingAppMVC.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/whats.jpg" class="img-fluid"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="user-menu">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a class="nav-link text-light"
+                           data-bs-toggle="tooltip" data-bs-placement="bottom" title="Update Profile">
+                            <span>@User.Identity.Name</span>
+                        </a>
+                    }
+                </div>
+
+
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="Index">Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Recipe" asp-action="Index">Recipe</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="User" asp-action="Index">User</a>
+                        </li>
+                        <li class="nav-Logout">
+                            <a class="nav-link text-light" asp-area="" asp-controller="LoginReg" asp-action="Logout">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Feedback" asp-action="Index">Feedback</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" data-bs-toggle="offcanvas" href="#aboutOffcanvas" role="button" aria-controls="aboutOffcanvas">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="aboutOffcanvas" aria-labelledby="aboutOffcanvasLabel">
+            <div class="offcanvas-header">
+                <h2 class="offcanvas-title" id="aboutOffcanvasLabel" style="color: blue; font-weight: bold">About</h2>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div>
+                    <p>
+                        <span style="font-weight: bold">“Whats Cooking Website”</span> is one of the innovative ideas of this era.
+                        For some people, cooking is a hobby, or they like to taste different kinds of food items, and for
+                        others, cooking is a business where they can maintain a hotel or restaurant. But now, everyone
+                        is trying to prepare new dishes irrespective of gender and age.
+                    </p>
+                    <p>
+                        From this <span style="font-weight: bold">“Whats Cooking Website”</span>, we are providing the ultimate
+                        solution for all of them. The website contains information about all food items irrespective of
+                        region and country.
+                    </p>
+                    <p>
+                        <span style="font-weight: bold">
+                            Ready to dive into the world of flavors?
+                        </span>
+                        Start exploring our collection of recipes and discover new culinary horizons with "What's Cooking Website."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <style>
+        .user-menu {
+            position: absolute;
+            right: 100px;
+            top: 10px;
+        }
+
+        .nav-Logout {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .container-fluid {
+            overflow: hidden;
+            padding: 5px;
+            z-index: 5;
+            background-color: darkslategrey;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .dropdown-menu {
+            z-index: 6;
+        }
+
+        .container {
+            padding-top: 60px;
+        }
+
+        .img-fluid {
+            width: 145px;
+            height: 55px;
+            overflow: hidden;
+            margin-top: -6px;
+        }
+
+        .footer {
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.9);
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0px;
+            width: 100%;
+            border-top: 1px solid white;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+        }
+
+        .footercontainer {
+            color: whitesmoke;
+            font-size: 18px;
+            margin: auto;
+        }
+
+        .user-icon {
+            width: 30px; /* Adjust the width to your desired size */
+            height: 30px; /* Adjust the height to your desired size */
+            margin-left: 5px; /* Add margin for spacing */
+        }
+    </style>
+
+    <footer class="border-top footer text-muted">
+        <div class="footercontainer">
+            &copy; 2023 - What's Cooking - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

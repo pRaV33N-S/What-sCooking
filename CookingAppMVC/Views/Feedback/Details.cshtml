@@ -1,0 +1,106 @@
+﻿@model CookingAppMVC.Models.Feedback
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container1">
+    <div class="card mb-5">
+        <div class="row no-gutters">
+            <div class="col-md-12 container2">
+                <div class="card-body">
+                    <h2 class="title">Feedback Details</h2><hr />
+                    <table class="table">
+                        <tr>
+                            <th>Feedback ID</th>
+                            <td>@Model.FeedbackID</td>
+                        </tr>
+                        <tr>
+                            <th>User Name</th>
+                            <td>@Model.UserName</td>
+                        </tr>
+                        <tr>
+                            <th>Dish Name</th>
+                            <td>@Model.DishName</td>
+                        </tr>
+                        <tr>
+                            <th>Category</th>
+                            <td>@Model.Category</td>
+                        </tr>
+                        <tr>
+                            <th>Comment</th>
+                            <td>@Model.Comment</td>
+                        </tr>
+                        <tr>
+                            <th>Rating</th>
+                            <td>@Model.Rating</td>
+                        </tr>
+                    </table>
+                    <p>
+                        <a asp-action="Index" class="btn btn-primary">Back</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Use the same styles as the User Details page */
+    .container1 {
+        margin-top: 90px;
+        margin-left: 120px;
+        margin-right: 120px;
+    }
+
+    /* Styling for the card and its contents */
+    .card {
+        background-color: #fff; /* Background color for the card */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Styling for the card body */
+    .card-body {
+        padding: 20px;
+    }
+
+    /* Styling for the card title */
+    .title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    /* Styling for the table within the card */
+    .table {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    /* Styling for table headings */
+    th {
+        text-align: left;
+        width: 30%; /* Adjust the width as needed */
+    }
+
+    /* Styling for table data cells */
+    td {
+        font-weight: bold;
+    }
+
+    /* Styling for buttons */
+    .btn-primary {
+        background-color: #007bff; /* Primary button color */
+        border-color: #007bff;
+        color: white;
+    }
+
+
+    body {
+
+        margin: 0;
+        background-image: url('https://img.freepik.com/free-photo/vegetables-set-left-black-slate_1220-685.jpg?w=826&t=st=1696412182~exp=1696412782~hmac=7d498f672ef83374be5e79ef347bfe1691d243ae1c2ee901840bb6984ad67bdf');
+    }
+</style>

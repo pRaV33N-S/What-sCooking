@@ -1,0 +1,242 @@
+﻿.search-container {
+    height: 100px;
+    padding: 10px 0;
+    text-align: center;
+    background-image: url('https://img.freepik.com/premium-photo/steak-with-spices-herbs-black-stone-background-meat-banner-top-view-free-space-your-text_187166-54348.jpg');
+
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    position: fixed;
+    top: 57px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.search-bar {
+    top: 40px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    overflow: hidden;
+    width: 400px;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    margin-bottom: 20px;
+    margin-top: 25px;
+}
+
+#searchInput {
+    flex-grow: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+#searchButton {
+    background-color: forestgreen;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+    #searchButton:hover {
+        background-color: lawngreen;
+    }
+
+.filter-container {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 0 20px;
+    position: fixed;
+    top: 157px;
+    left: 300px;
+    right: 0;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.create-new-button {
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: black;
+    color: whitesmoke;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+.dropdown {
+    position: relative;
+}
+
+#sortButton {
+    background-color: sandybrown;
+    border: 2px solid #624848;
+    cursor: pointer;
+    color: black;
+}
+
+#sortButton:hover {
+    background-color:wheat;
+}
+
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    background-color: rgb(135, 57, 57);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    list-style: none;
+    padding: 0;
+    display: none;
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    display: block;
+
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 110px;
+    position: relative;
+    z-index: 1;
+    margin-top: 120px;
+    margin-left: 120px;
+    overflow-y: auto;    
+
+}
+body {
+    background-image: url('https://images.pexels.com/photos/129731/pexels-photo-129731.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional: This keeps the image fixed while scrolling */
+}
+
+
+.sidebar {
+    width: 300px;
+    border-right: 1px solid #ccc;
+    background-color:#cf712173;
+    padding: 10px;
+    position: fixed;
+    top: 157px;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.category-button-list {
+    list-style: none;
+    padding: 0px;
+    text-decoration: none;
+    color: white;
+}
+
+    .category-button-list li {
+        text-decoration: none;
+        padding: 10px 0;
+        font-size: 10px;
+        color:white;
+        text-align: center;
+    }
+
+.category-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    font-size: 20px;
+    color: white;
+    text-align: left;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+    text-align: center; 
+    font: bolder;
+}
+
+    .category-button:hover {
+        background-color: dimgrey;
+        box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+    }
+
+
+.main-content {
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+    padding-right: 0px;
+}
+
+.content {
+    position: relative;
+}
+
+.recipe-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 250px;
+    right: 0;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.recipe-card-container {
+    flex: 0 0 calc(33.33% - 20px);
+    margin-right: 20px;
+    margin-bottom: 20px;
+    min-height: 150px;
+}
+
+.recipe-card {
+    text-decoration: none;
+    border: 1px solid #ddd;
+    padding: 10px;
+    display: block;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    height: 100%;
+    color: black;
+}
+
+.recipe-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.recipe-name {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.recipe-category {
+    margin-top: 5px;
+    color: #888;
+}

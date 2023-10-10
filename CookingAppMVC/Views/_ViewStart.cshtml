@@ -1,0 +1,20 @@
+﻿@{
+    if (this.User.IsInRole("Admin") || !this.User.Identity.IsAuthenticated)
+    {
+        Layout = "_Layout";
+    }
+    else
+    {
+        Layout = "_Layout_User";
+    }
+
+}
+<Style>
+    body {
+        min-height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        justify-content: space-around;
+        background-image: url("https://www.crushpixel.com/big-static7/preview4/food-menu-background-94222.jpg")
+    }
+</Style>

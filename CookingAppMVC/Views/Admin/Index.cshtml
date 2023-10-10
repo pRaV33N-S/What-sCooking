@@ -1,0 +1,113 @@
+﻿@model List<Admin>
+<div id="prime">
+    <h2 id="Heading1">Admin List</h2>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary btn-create">Create New</a>
+    </p>
+
+    <div id="table1">
+        <table class="table">
+            <thead class="row1">
+                <tr>
+                    <th>Admin ID</th>
+                    <th>Admin Name</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var admin in Model)
+                {
+                    <tr class="row2">
+                        <td>@admin.AdminId</td>
+                        <td>@admin.Adminname</td>
+                        <td>@admin.Email</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@admin.AdminId" class="btn btn-primary btn-edit">Edit</a> |
+                            <a asp-action="Delete" asp-route-id="@admin.AdminId" class="btn btn-primary btn-delete">Delete</a> |
+                            <a asp-action="Details" asp-route-id="@admin.AdminId" class="btn btn-primary btn-details">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<style>
+    body {
+        background-image: url("https://img.freepik.com/premium-photo/food-background-menu-with-spices-culinary-ingredients-dark-stone-background-cooking-concepts-culinary-background-top-view-free-space-your-text_234595-2347.jpg?w=826");
+        backdrop-filter: blur(3px);
+    }
+
+    #Heading1 {
+        color: white;
+        font-weight: bold;
+    }
+
+    th, td {
+        color: white;
+        text-align: center;
+    }
+
+    table, th, td {
+        border: 0px solid white;
+    }
+
+    a:hover {
+        color: white;
+    }
+    /*.row1{
+                background-color: #007bff;
+                border-bottom: 2px solid #808080;
+            }*/
+
+    .row1 {
+        background-color: #333333; /* Dark grey shade for the table heading */
+        border-bottom: 2px solid #808080;
+        color: white; /* Text color for better contrast */
+    }
+
+    .row2 {
+        background-color: white;
+        border-bottom: 2px solid #808080;
+    }
+
+    td {
+        color: black;
+    }
+
+    .btn-edit {
+        background-color: #FFFF66;
+        border-color: #FFFF66;
+        color: black;
+    }
+
+    .btn-delete {
+        background-color: #FF6666;
+        border-color: #FF6666;
+        color: black;
+    }
+
+    .btn-details {
+        background-color: #66FF66;
+        border-color: #66FF66;
+        color: black;
+    }
+
+    .btn-create {
+        background-color: #87CEEB;
+        /*#FFA500;
+        / Orange shade for the "Create New" button */ border-color: #87CEEB; /* Matching border color */
+        color: black; /* Text color for better contrast */
+        font-weight: bold;
+    }
+
+    #prime {
+        margin-top: 30px;
+    }
+</style>
+
+
+
+
